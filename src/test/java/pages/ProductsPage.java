@@ -16,7 +16,7 @@ public class ProductsPage extends BasePage {
 
     @Override
     public ProductsPage open() {
-        return null;
+        return this;
     }
 
     public ProductsPage buyProduct(String product_name) {

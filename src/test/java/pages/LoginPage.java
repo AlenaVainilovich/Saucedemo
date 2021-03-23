@@ -18,7 +18,7 @@ public class LoginPage extends BasePage {
 
     public LoginPage open() {
 
-        browser.get("https://www.saucedemo.com/index.html");
+        browser.get("https://www.saucedemo.com/");
         return this;
     }
 
@@ -33,7 +33,7 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage isPageOpened() {
-        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(LOGIN_BUTTON));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(LOGIN_BUTTON));
         return this;
     }
 

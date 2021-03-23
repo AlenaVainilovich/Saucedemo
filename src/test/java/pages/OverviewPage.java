@@ -30,7 +30,7 @@ public class OverviewPage extends BasePage{
 
     @Deprecated
     public OverviewPage open() {
-        return null;
+        return this;
     }
 
     @Override

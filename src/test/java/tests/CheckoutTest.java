@@ -26,8 +26,13 @@ public class CheckoutTest extends BaseTest {
 
     @Test
     public void cancelButton() {
+        loginPage
+                .open()
+                .isPageOpened()
+                .login("standard_user", "secret_sauce");
         cartPage
                 .open()
+                .isPageOpened()
                 .openCheckoutPage();
         checkoutPage
                 .clickCancel();
@@ -37,6 +42,10 @@ public class CheckoutTest extends BaseTest {
 
     @Test
     public void correctCheckout() {
+        loginPage
+                .open()
+                .isPageOpened()
+                .login("standard_user", "secret_sauce");
         cartPage
                 .open()
                 .isPageOpened()
@@ -55,16 +64,20 @@ public class CheckoutTest extends BaseTest {
                 .isPageOpened()
                 .login("standard_user", "secret_sauce");
         productsPage
+                .open()
                 .isPageOpened()
                 .buyProduct("Sauce Labs Bolt T-Shirt");
         cartPage
+                .open()
                 .isPageOpened()
                 .openCheckoutPage();
         checkoutPage
+                .open()
                 .isPageOpened()
                 .checkoutInformation("Dow", "Jones", "50450")
                 .clickContinue();
         overviewPage
+                .open()
                 .isPageOpened()
                 .clickFinish();
         assertEquals(overviewPage.validateOrderCompletion(), "THANK YOU FOR YOUR ORDER");
