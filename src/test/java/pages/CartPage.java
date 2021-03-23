@@ -9,7 +9,7 @@ import org.testng.Assert;
 import java.util.List;
 
 public class CartPage extends BasePage {
-    public static final String URL_CART_PAGE = "https://www.saucedemo.com/cart.ht ml";
+    public static final String URL_CART_PAGE = "https://www.saucedemo.com/cart.html";
     public static final By CHECKOUT_BUTTON = By.cssSelector(".checkout_button");
     public static final By CONTINUE_SHOPPING_BUTTON = By.xpath("//*[contains(text(),'Continue')]");
     private static final By REMOVE_BUTTON = By.xpath("//button[@class='btn_secondary cart_button']");
