@@ -12,7 +12,7 @@ public class CartTest extends BaseTest {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
         productsPage.buyProduct("Sauce Labs Bike Light");
-        cartPage.openPage();
+        cartPage.open();
         cartPage.productShouldBeInTheList("Sauce Labs Bike Light");
 
     }
@@ -24,9 +24,9 @@ public class CartTest extends BaseTest {
         productsPage.buyProduct("Sauce Labs Bike Light");
         productsPage.buyProduct("Sauce Labs Onesie");
         productsPage.buyProduct("Sauce Labs Bolt T-Shirt");
-        cartPage.openPage();
+        cartPage.open();
         cartPage.removeFromCart();
-        assertEquals(cartPage.getNumberOfItemsInCart(), 2);
+        assertEquals(cartPage.getNumberOfItemsInCart(), 2, "Количество товаров в корзине неправильное");
 
     }
 }

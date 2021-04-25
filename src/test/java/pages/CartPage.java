@@ -3,7 +3,9 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
+
 
 import java.util.List;
 
@@ -18,11 +20,14 @@ public class CartPage extends BasePage {
     public static final String ITEM_QUANTITY = COMMON_PATH_CART_ITEM + "//*[@class='cart_quantity']";
 
 
+
     public CartPage(WebDriver browser) {
+
         super(browser);
     }
 
-    public CartPage openPage() {
+    @Override
+    public CartPage open() {
         browser.get(URL_CART_PAGE);
         return this;
     }
@@ -58,6 +63,12 @@ public class CartPage extends BasePage {
 
     public void openCheckoutPage() {
         browser.findElement(CHECKOUT_BUTTON).click();
+    }
+
+
+    public CartPage isPageOpened() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(CHECKOUT_BUTTON));
+        return this;
     }
 
 }
