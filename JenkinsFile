@@ -7,7 +7,7 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
+        stage('Test') {
             steps {
                 // Get some code from a GitHub repository
                 git 'https://github.com/AlenaVainilovich/Saucedemo'
@@ -24,8 +24,7 @@ pipeline {
                 // failed, record the test results and archive the jar file.
                 success {
                     junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
-                }
+                   }
             }
         }
         stage('reports') {
